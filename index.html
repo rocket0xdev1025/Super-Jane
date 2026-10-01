@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Super Jane ($SJ) — Break the Timeline</title>
+  <meta name="description" content="Super Jane isn't here to follow the timeline—she's here to break it, dominate the memes, and turn pure chaos into legendary vibes. $SJ on Solana." />
+  <meta property="og:title" content="Super Jane ($SJ)" />
+  <meta property="og:description" content="Super Jane isn't here to follow the timeline—she's here to break it, dominate the memes, and turn pure chaos into legendary vibes." />
+  <meta property="og:image" content="banner.jpg" />
+  <link rel="icon" href="logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Lilita+One&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#04141b",
+            foam: "#e7fffb",
+            teal: {
+              glow: "#7ef0e6",
+              bright: "#1ec8be",
+              deep: "#0b3d42"
+            },
+            flare: "#ff5d8f"
+          },
+          fontFamily: {
+            display: ["Lilita One", "Arial Black", "sans-serif"],
+            comic: ["Bangers", "Impact", "sans-serif"],
+            body: ["Outfit", "Segoe UI", "sans-serif"]
+          },
+          boxShadow: {
+            comic: "6px 6px 0 #04141b",
+            cape: "8px 8px 0 #0b3d42"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    body {
+      font-family: Outfit, "Segoe UI", sans-serif;
+      background: #04141b;
+      color: #e7fffb;
+    }
+
+    ::selection {
+      background: #1ec8be;
+      color: #04141b;
+    }
+
+    :focus-visible {
+      outline: 2px solid #7ef0e6;
+      outline-offset: 3px;
+    }
+
+    @keyframes drift {
+      from { transform: scale(1); }
+      to { transform: scale(1.08) translate3d(-1.4%, -1%, 0); }
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @keyframes floaty {
+      from { transform: rotate(-3.5deg) translateY(0); }
+      to { transform: rotate(-1deg) translateY(-12px); }
+    }
+
+    .bg-drift {
+      animation: drift 34s ease-in-out infinite alternate;
+    }
+
+    .ticker-track {
+      animation: ticker 32s linear infinite;
+    }
+
+    .ticker:hover .ticker-track {
+      animation-play-state: paused;
+    }
+
+    .float-sticker {
+      animation: floaty 5.5s ease-in-out infinite alternate;
+    }
+
+    .panel {
+      background-color: rgba(4, 18, 26, 0.84);
+      background-image: radial-gradient(rgba(126, 240, 230, 0.09) 1.1px, transparent 1.1px);
+      background-size: 13px 13px;
+      backdrop-filter: blur(10px);
+    }
+
+    .speech::after {
+      content: "";
+      position: absolute;
+      left: 42px;
+      bottom: -16px;
+      border-width: 16px 18px 0 0;
+      border-style: solid;
+      border-color: rgba(4, 18, 26, 0.92) transparent transparent transparent;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .bg-drift,
+      .ticker-track,
+      .float-sticker {
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="font-body antialiased">
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div class="bg-drift absolute -inset-[8%] bg-[url('banner.jpg')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-ink/35 via-ink/55 to-ink/88"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(30,200,190,0.18),transparent_55%)]"></div>
+  </div>
+
+  <header class="sticky top-0 z-50 border-b-[3px] border-ink bg-ink/75 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="logo.jpg" alt="Super Jane logo" class="h-12 w-12 rounded-full border-[3px] border-teal-bright object-cover object-[center_22%] shadow-comic" />
+        <span class="leading-none">
+          <span class="block font-display text-xl tracking-wide text-foam">SUPER JANE</span>
+          <span class="font-comic text-sm tracking-[0.22em] text-teal-glow">$SJ</span>
+        </span>
+      </a>
+
+      <div class="hidden items-center gap-6 text-sm font-semibold uppercase tracking-[0.16em] text-foam/80 lg:flex">
+        <a href="#lore" class="transition hover:text-teal-glow">Lore</a>
+        <a href="#how-to-buy" class="transition hover:text-teal-glow">How to Buy</a>
+        <a href="#chart" class="transition hover:text-teal-glow">Chart</a>
+        <a href="#community" class="transition hover:text-teal-glow">Community</a>
+      </div>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="https://t.me/MemeInudustries" target="_blank" rel="noopener noreferrer" aria-label="Super Jane on Telegram" class="transition hover:-translate-y-0.5">
+          <img src="tg.png" alt="" class="h-10 w-10 rounded-full border-2 border-foam/80 object-cover shadow-comic" />
+        </a>
+        <a href="https://x.com/MemeInudustries" target="_blank" rel="noopener noreferrer" aria-label="Super Jane on X" class="transition hover:-translate-y-0.5">
+          <img src="x.png" alt="" class="h-10 w-10 rounded-xl border-2 border-foam/80 object-cover shadow-comic" />
+        </a>
+        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=7A6pgYtKkN75URKFyrStMBzkBYoceDk4Wo2Es1Ctpump" target="_blank" rel="noopener noreferrer" class="hidden items-center bg-teal-bright px-4 py-2 font-display text-lg tracking-wide text-ink shadow-comic transition hover:-translate-y-0.5 hover:shadow-[8px_8px_0_#04141b] sm:inline-flex">
+          Buy Now
+        </a>
+        <button id="menu-btn" type="button" class="inline-flex h-10 w-10 items-center justify-center border-2 border-teal-bright text-teal-glow lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden border-t border-teal-bright/30 bg-ink/95 px-4 py-4 lg:hidden">
+      <div class="flex flex-col gap-3 font-display text-2xl tracking-wide">
+        <a href="#lore" class="mobile-link">Lore</a>
+        <a href="#how-to-buy" class="mobile-link">How to Buy</a>
+        <a href="#chart" class="mobile-link">Chart</a>
+        <a href="#community" class="mobile-link">Community</a>
+        <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=7A6pgYtKkN75URKFyrStMBzkBYoceDk4Wo2Es1Ctpump" target="_blank" rel="noopener noreferrer" class="mt-1 inline-flex justify-center bg-teal-bright px-4 py-2 text-ink shadow-comic">Buy Now</a>
+      </div>
+    </div>
+
+    <div class="ticker overflow-hidden border-t border-teal-bright/25 bg-teal-deep/80 py-2 text-foam">
+      <div class="ticker-track flex w-max gap-8 font-comic text-lg tracking-[0.18em]">
+        <span class="px-4">SUPER JANE • $SJ • SOLANA • BREAK THE TIMELINE • DOMINATE THE MEMES • LEGENDARY VIBES • PURE CHAOS • UP UP AND REWRITE •</span>
+        <span class="px-4" aria-hidden="true">SUPER JANE • $SJ • SOLANA • BREAK THE TIMELINE • DOMINATE THE MEMES • LEGENDARY VIBES • PURE CHAOS • UP UP AND REWRITE •</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="relative mx-auto grid min-h-[calc(100vh-7.5rem)] max-w-6xl items-end gap-10 px-4 pb-16 pt-10 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:pt-16">
+      <div class="panel speech relative border-[3px] border-ink p-6 shadow-cape sm:p-8">
+        <p class="font-comic text-xl tracking-[0.22em] text-teal-glow">Issue 01 · Solana</p>
+        <h1 class="mt-2 font-display text-6xl leading-[0.88] text-foam drop-shadow-[4px_4px_0_#04141b] sm:text-7xl lg:text-8xl">
+          <span class="block">SUPER</span>
+          <span class="block text-teal-glow">JANE</span>
+        </h1>
+        <p class="mt-4 inline-flex items-center gap-2 border-2 border-teal-bright bg-teal-deep/70 px-3 py-1 font-comic text-2xl tracking-[0.2em] text-foam shadow-comic">
+          Symbol $SJ
+        </p>
+        <p class="mt-6 max-w-xl text-lg font-medium leading-relaxed text-foam/95 sm:text-xl">
+          Super Jane isn't here to follow the timeline—she's here to break it, dominate the memes, and turn pure chaos into legendary vibes.
+        </p>
+
+        <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+          <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=7A6pgYtKkN75URKFyrStMBzkBYoceDk4Wo2Es1Ctpump" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-teal-bright px-6 py-3 font-display text-2xl tracking-wide text-ink shadow-comic transition hover:-translate-y-0.5 hover:shadow-[8px_8px_0_#04141b]">
+            Buy Now
+          </a>
+          <a href="https://dexscreener.com/solana/7A6pgYtKkN75URKFyrStMBzkBYoceDk4Wo2Es1Ctpump" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center border-[3px] border-teal-bright bg-ink/50 px-6 py-3 font-display text-2xl tracking-wide text-foam shadow-comic transition hover:-translate-y-0.5 hover:shadow-[8px_8px_0_#0b3d42]">
+            Chart
+          </a>
+        </div>
+
+        <div class="mt-6 flex flex-col gap-3 border-2 border-dashed border-teal-bright/70 bg-ink/55 p-3 sm:flex-row sm:items-center sm:justify-between">
+          <div class="min-w-0">
+            <p class="font-comic tracking-[0.18em] text-teal-glow">Contract Address</p>
+            <p class="truncate font-mono text-lg text-foam sm:text-xl"><span class="js-ca">7A6pgYtKkN75URKFyrStMBzkBYoceDk4Wo2Es1Ctpump</span></p>
+          </div>
+          <button type="button" class="js-copy inline-flex shrink-0 items-center justify-center bg-foam px-4 py-2 font-display text-lg tracking-wide text-ink shadow-comic transition hover:-translate-y-0.5">
+            Copy CA
+          </button>
+        </div>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-md lg:max-w-none">
+        <div aria-hidden="true" class="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[repeating-conic-gradient(from_0deg,#1ec8be_0_7deg,transparent_7deg_16deg)] opacity-50 blur-[1px] sm:h-96 sm:w-96"></div>
+        <img src="logo.jpg" alt="Super Jane, cape flying, hands on hips" class="float-sticker relative mx-auto w-[min(100%,420px)] rounded-[2rem] border-[4px] border-foam bg-white shadow-[12px_12px_0_#04141b]" />
+        <p class="relative mt-4 text-center font-comic text-2xl tracking-[0.16em] text-foam drop-shadow-[2px_2px_0_#04141b]">Cape on. Timeline off.</p>
+      </div>
+    </section>
+
+    <section id="lore" class="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-14">
+      <div class="mb-8 max-w-3xl">
+        <p class="font-comic text-2xl tracking-[0.2em] text-teal-glow">The Lore</p>
+        <h2 class="mt-1 font-display text-4xl leading-none text-foam drop-shadow-[3px_3px_0_#04141b] sm:text-6xl">She rewrites the skyline.</h2>
+        <p class="mt-4 text-lg leading-relaxed text-foam/90">
+          Other coins wait for the timeline to notice them. Super Jane cracks it open. Memes don't pass her by — they fall in line. What starts as pure chaos leaves her city as legendary vibes, stamped with a teal cape and the ticker <span class="font-semibold text-teal-glow">$SJ</span>.
+        </p>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-3">
+        <article class="panel border-[3px] border-ink p-5 shadow-comic transition hover:-translate-y-1">
+          <p class="font-comic text-3xl text-teal-glow">01</p>
+          <h3 class="mt-2 font-display text-3xl text-foam">Break the timeline</h3>
+          <p class="mt-2 leading-relaxed text-foam/85">She isn't queued behind the feed. Super Jane shows up, bends the clock, and leaves the old meta on the sidewalk.</p>
+        </article>
+        <article class="panel border-[3px] border-ink p-5 shadow-comic transition hover:-translate-y-1 md:-rotate-1">
+          <p class="font-comic text-3xl text-flare">02</p>
+          <h3 class="mt-2 font-display text-3xl text-foam">Dominate the memes</h3>
+          <p class="mt-2 leading-relaxed text-foam/85">One symbol. One cape. $SJ takes the punchlines, the group chats, and the city lights — then asks for the next panel.</p>
+        </article>
+        <article class="panel border-[3px] border-ink p-5 shadow-comic transition hover:-translate-y-1">
+          <p class="font-comic text-3xl text-teal-glow">03</p>
+          <h3 class="mt-2 font-display text-3xl text-foam">Legendary vibes</h3>
+          <p class="mt-2 leading-relaxed text-foam/85">Chaos is the origin story. Legendary is the landing. Hold $SJ and fly with the skyline she just claimed.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="how-to-buy" class="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-14">
+      <div class="panel relative overflow-hidden border-[3px] border-ink p-6 shadow-cape sm:p-8">
+        <p aria-hidden="true" class="pointer-events-none absolute -right-2 -top-6 font-comic text-[7rem] leading-none text-teal-bright/15 sm:text-[9rem]">SJ</p>
+        <p class="font-comic text-2xl tracking-[0.2em] text-teal-glow">Field manual</p>
+        <h2 class="mt-1 font-display text-4xl leading-none text-foam sm:text-6xl">How to Buy $SJ</h2>
+        <p class="mt-4 max-w-2xl text-lg text-foam/90">Four steps on Solana. Suit up, load SOL, swap into Super Jane, and confirm the landing. Match the contract on this page before you fly.</p>
+
+        <ol class="mt-8 grid gap-4 lg:grid-cols-4">
+          <li class="border-[3px] border-ink bg-ink/70 p-4 shadow-comic">
+            <div class="mb-3 flex items-center justify-between">
+              <span class="bg-teal-bright px-2 py-1 font-comic text-xl text-ink">Step 1</span>
+              <svg viewBox="0 0 24 24" class="h-7 w-7 text-teal-glow" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <rect x="4" y="6" width="16" height="13" rx="2" />
+                <path d="M8 6V5a4 4 0 0 1 8 0v1" />
+              </svg>
+            </div>
+            <h3 class="font-display text-2xl text-foam">Get a wallet</h3>
+            <p class="mt-2 text-sm leading-relaxed text-foam/85">Install <a class="underline decoration-teal-bright underline-offset-2 hover:text-teal-glow" href="https://phantom.app" target="_blank" rel="noopener noreferrer">Phantom</a> or <a class="underline decoration-teal-bright underline-offset-2 hover:text-teal-glow" href="https://solflare.com" target="_blank" rel="noopener noreferrer">Solflare</a>. Create a Solana wallet and store the recovery phrase offline.</p>
+          </li>
+          <li class="border-[3px] border-ink bg-ink/70 p-4 shadow-comic">
+            <div class="mb-3 flex items-center justify-between">
+              <span class="bg-teal-bright px-2 py-1 font-comic text-xl text-ink">Step 2</span>
+              <svg viewBox="0 0 24 24" class="h-7 w-7 text-teal-glow" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <ellipse cx="12" cy="7" rx="7" ry="3" />
+                <path d="M5 7v5c0 1.7 3.1 3 7 3s7-1.3 7-3V7" />
+                <path d="M5 12v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5" />
+              </svg>
+            </div>
+            <h3 class="font-display text-2xl text-foam">Fund with SOL</h3>
+            <p class="mt-2 text-sm leading-relaxed text-foam/85">Buy SOL and send it to your wallet address. Keep a little extra SOL in the wallet so network fees can clear.</p>
+          </li>
+          <li class="border-[3px] border-ink bg-ink/70 p-4 shadow-comic">
+            <div class="mb-3 flex items-center justify-between">
+              <span class="bg-flare px-2 py-1 font-comic text-xl text-ink">Step 3</span>
+              <svg viewBox="0 0 24 24" class="h-7 w-7 text-teal-glow" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M7 7h11l-3-3" />
+                <path d="M17 17H6l3 3" />
+              </svg>
+            </div>
+            <h3 class="font-display text-2xl text-foam">Swap for $SJ</h3>
+            <p class="mt-2 text-sm leading-relaxed text-foam/85">Hit Buy Now. The swap opens with SOL in and $SJ out. Enter the amount, check the contract, and swap.</p>
+          </li>
+          <li class="border-[3px] border-ink bg-ink/70 p-4 shadow-comic">
+            <div class="mb-3 flex items-center justify-between">
+              <span class="bg-teal-bright px-2 py-1 font-comic text-xl text-ink">Step 4</span>
+              <svg viewBox="0 0 24 24" class="h-7 w-7 text-teal-glow" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M12 19V6" />
+                <path d="M7 10l5-5 5 5" />
+                <path d="M5 20h14" />
+              </svg>
+            </div>
+            <h3 class="font-display text-2xl text-foam">Confirm and fly</h3>
+            <p class="mt-2 text-sm leading-relaxed text-foam/85">Approve the transaction in your wallet. $SJ lands in seconds. If the token is hidden, import it with the CA below.</p>
+          </li>
+        </ol>
+
+        <div class="mt-6 flex flex-col gap-4 border-2 border-teal-bright/50 bg-ink/60 p-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p class="font-comic tracking-[0.16em] text-teal-glow">CA ready to copy</p>
+            <p class="font-mono text-2xl text-foam"><span class="js-ca">7A6pgYtKkN75URKFyrStMBzkBYoceDk4Wo2Es1Ctpump</span></p>
+          </div>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <button type="button" class="js-copy inline-flex items-center justify-center bg-foam px-5 py-3 font-display text-xl text-ink shadow-comic transition hover:-translate-y-0.5">Copy CA</button>
+            <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=7A6pgYtKkN75URKFyrStMBzkBYoceDk4Wo2Es1Ctpump" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-teal-bright px-5 py-3 font-display text-xl text-ink shadow-comic transition hover:-translate-y-0.5">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="chart" class="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-14">
+      <div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="font-comic text-2xl tracking-[0.2em] text-teal-glow">Live signal</p>
+          <h2 class="mt-1 font-display text-4xl leading-none text-foam drop-shadow-[3px_3px_0_#04141b] sm:text-6xl">Dexscreener</h2>
+          <p class="mt-3 max-w-xl text-lg text-foam/90">Watch $SJ move across the skyline. The embed tracks the Super Jane pair, and the chart button opens the full Dexscreener page.</p>
+        </div>
+        <a href="https://dexscreener.com/solana/7A6pgYtKkN75URKFyrStMBzkBYoceDk4Wo2Es1Ctpump" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center border-[3px] border-teal-bright bg-ink/60 px-5 py-3 font-display text-2xl text-foam shadow-comic transition hover:-translate-y-0.5">
+          Chart
+        </a>
+      </div>
+
+      <div class="overflow-hidden border-[4px] border-ink bg-ink shadow-cape">
+        <iframe
+          title="Super Jane Dexscreener chart"
+          src="https://dexscreener.com/solana/7A6pgYtKkN75URKFyrStMBzkBYoceDk4Wo2Es1Ctpump?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartTheme=dark&theme=dark&chartStyle=1&chartType=usd&interval=15"
+          class="h-[480px] w-full sm:h-[560px]"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+
+    <section id="community" class="mx-auto max-w-6xl px-4 py-8 pb-28 sm:px-6 sm:py-14 lg:pb-16">
+      <div class="mb-8 max-w-2xl">
+        <p class="font-comic text-2xl tracking-[0.2em] text-teal-glow">The league</p>
+        <h2 class="mt-1 font-display text-4xl leading-none text-foam drop-shadow-[3px_3px_0_#04141b] sm:text-6xl">Join the skyline</h2>
+        <p class="mt-4 text-lg text-foam/90">The city doesn't sleep, and neither does the timeline she just broke. Pull up on Telegram or X and ride the legendary vibes.</p>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-2">
+        <a href="https://t.me/MemeInudustries" target="_blank" rel="noopener noreferrer" class="panel group flex items-center gap-5 border-[3px] border-ink p-5 shadow-comic transition hover:-translate-y-1">
+          <img src="tg.png" alt="" class="h-16 w-16 rounded-full border-[3px] border-foam object-cover shadow-comic" />
+          <span>
+            <span class="block font-display text-3xl text-foam group-hover:text-teal-glow">Telegram</span>
+            <span class="text-foam/75">t.me/MemeInudustries</span>
+          </span>
+        </a>
+        <a href="https://x.com/MemeInudustries" target="_blank" rel="noopener noreferrer" class="panel group flex items-center gap-5 border-[3px] border-ink p-5 shadow-comic transition hover:-translate-y-1">
+          <img src="x.png" alt="" class="h-16 w-16 rounded-2xl border-[3px] border-foam object-cover shadow-comic" />
+          <span>
+            <span class="block font-display text-3xl text-foam group-hover:text-teal-glow">X</span>
+            <span class="text-foam/75">x.com/MemeInudustries</span>
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t-[3px] border-ink bg-ink/85">
+    <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 sm:px-6 md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center gap-3">
+        <img src="logo.jpg" alt="" class="h-14 w-14 rounded-full border-[3px] border-teal-bright object-cover object-[center_22%]" />
+        <div>
+          <p class="font-display text-2xl text-foam">Super Jane · $SJ</p>
+          <p class="max-w-md text-sm text-foam/70">Super Jane isn't here to follow the timeline—she's here to break it, dominate the memes, and turn pure chaos into legendary vibes.</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://t.me/MemeInudustries" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+          <img src="tg.png" alt="" class="h-11 w-11 rounded-full border-2 border-foam/80 object-cover" />
+        </a>
+        <a href="https://x.com/MemeInudustries" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <img src="x.png" alt="" class="h-11 w-11 rounded-xl border-2 border-foam/80 object-cover" />
+        </a>
+      </div>
+    </div>
+    <p class="border-t border-white/10 px-4 py-4 text-center text-xs text-foam/50">$SJ is a meme on Solana. Markets are chaos. Do your own research.</p>
+  </footer>
+
+  <div class="fixed inset-x-0 bottom-0 z-40 flex gap-2 border-t-[3px] border-ink bg-ink/92 p-3 backdrop-blur lg:hidden">
+    <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=7A6pgYtKkN75URKFyrStMBzkBYoceDk4Wo2Es1Ctpump" target="_blank" rel="noopener noreferrer" class="inline-flex flex-1 items-center justify-center bg-teal-bright py-3 font-display text-xl text-ink shadow-comic">Buy Now</a>
+    <a href="https://dexscreener.com/solana/7A6pgYtKkN75URKFyrStMBzkBYoceDk4Wo2Es1Ctpump" target="_blank" rel="noopener noreferrer" class="inline-flex flex-1 items-center justify-center border-[3px] border-teal-bright py-3 font-display text-xl text-foam">Chart</a>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite" class="pointer-events-none fixed bottom-24 left-1/2 z-50 hidden -translate-x-1/2 bg-teal-bright px-4 py-2 font-display text-lg text-ink shadow-comic lg:bottom-8">
+    CA copied
+  </div>
+
+  <script>
+    const CA = "7A6pgYtKkN75URKFyrStMBzkBYoceDk4Wo2Es1Ctpump";
+
+    document.querySelectorAll(".js-ca").forEach((node) => {
+      node.textContent = CA;
+    });
+
+    const toast = document.getElementById("toast");
+    let toastTimer;
+
+    async function copyCa(button) {
+      try {
+        await navigator.clipboard.writeText(CA);
+      } catch (error) {
+        const area = document.createElement("textarea");
+        area.value = CA;
+        area.setAttribute("readonly", "");
+        area.style.position = "fixed";
+        area.style.left = "-9999px";
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand("copy");
+        area.remove();
+      }
+
+      const original = button.textContent;
+      button.textContent = "Copied";
+      toast.classList.remove("hidden");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add("hidden");
+        button.textContent = original;
+      }, 1600);
+    }
+
+    document.querySelectorAll(".js-copy").forEach((button) => {
+      button.addEventListener("click", () => copyCa(button));
+    });
+
+    const menuBtn = document.getElementById("menu-btn");
+    const menu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      const willOpen = menu.classList.contains("hidden");
+      menu.classList.toggle("hidden");
+      menuBtn.setAttribute("aria-expanded", String(willOpen));
+      menuBtn.setAttribute("aria-label", willOpen ? "Close menu" : "Open menu");
+    });
+
+    document.querySelectorAll(".mobile-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.add("hidden");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.setAttribute("aria-label", "Open menu");
+      });
+    });
+  </script>
+</body>
+</html>
